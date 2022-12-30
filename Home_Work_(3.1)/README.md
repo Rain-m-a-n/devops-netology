@@ -2,19 +2,19 @@
 
 1. С помощью базового файла конфигурации запустите Ubuntu 20.04 в VirtualBox посредством Vagrant:
     1. базовый файл подправил:
-    ``` 
+``` 
     Vagrant.configure("2") do |config|
  	config.vm.box = "bento/ubuntu-20.04"
 	config.vm.box_check_update = false
 	config.vm.network "public_network", ip: "192.168.1.250"
 	config.vm.provider "virtualbox" do |v|
   	config.vm.hostname = "MyFirstVM"	
-		    v.memory = 4024
-  		    v.cpus = 4
+	        v.memory = 4024
+  	        v.cpus = 4
 	
     	 end
     end	
-    ```
+```
 1. Ознакомился.
 1. Ознакомился.
 1. Подключился с помощью *vagrant ssh* добавил пользователя.
