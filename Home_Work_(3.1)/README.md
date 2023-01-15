@@ -50,7 +50,7 @@
         * bash is /bin/bash
     * *mkdir* -p /tmp/new_path_directory/     
     * *cp* /bin/bash /tmp/new_path_directory/
-    * PATH=**/tmp/new_path_directory/bash:**/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin.
+    * PATH=**/tmp/new_path_directory/:**/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin.
     * *type* -a bash
         * **bash is /tmp/new_path_directory/bash**
         * bash is /usr/bin/bash
