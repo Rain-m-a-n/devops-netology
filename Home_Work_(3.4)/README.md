@@ -21,9 +21,7 @@
         * создадим файл в домашнем каталоге: touch /home/bortnik/service.conf/availability
         * добавим в файл строку: OPTIONS="--collector.textfile.directory /home/bortnik/service.conf/textfile_collector"
           теперь это значение можно использовать в качестве параметров запуска Unit. 
-        * 
-
-
+        
     - Поместите его в автозагрузку:  
     *sudo systemctl enable monitoring.service*  
       ```
