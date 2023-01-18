@@ -1,36 +1,42 @@
 1. На лекции мы познакомились с node_exporter. В демонстрации его исполняемый файл запускался в background. Используя знания из лекции по systemd, создайте самостоятельно простой unit-файл для node_exporter:
     * Создал UNIT в папке /etc/systemd/system/**monitoring.service**
-    ```
-    [Unit]
-    Description=Node Exporter
-    After=network.target
+      ```
+      [Unit]
+      Description=Node Exporter
+      After=network.target
 
-    [Service]
-    Type=simple
-    ExecStart=/usr/local/bin/node_exporter
-    EnvironmentFile=-/usr/lib/systemd/system
-    KillMode=mixed
+      [Service]
+      ExecStart=/usr/local/bin/node_exporter $OPTIONS
+      EnvironmentFile=/home/bortnik/service.conf/availability
+      KillMode=mixed
 
-    [Install]
-    WantedBy=default.target
-    ```
+      [Install]
+      WantedBy=default.target
+      ```
     скачал **node_exporter** *wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz*  
     распаковал архив и перенёс в **/usr/local/bin:**  
     перечитал **daemon:** sudo systemctl daemon-reload
 
-    - поместите его в автозагрузку:  
+    - Предусмотрите возможность добавления опций к запускаемому процессу через внешний файл:
+        * создадим файл в домашнем каталоге: touch /home/bortnik/service.conf/availability
+        * добавим в файл строку: OPTIONS="--collector.textfile.directory /home/bortnik/service.conf/textfile_collector"
+          теперь это значение можно использовать в качестве параметров запуска Unit. 
+        * 
+
+
+    - Поместите его в автозагрузку:  
     *sudo systemctl enable monitoring.service*  
-    ```
-    bortnik@MyFirstVM:~$ sudo systemctl status monitoring.service
-    monitoring.service - Node Exporter
-    Loaded: loaded (/etc/systemd/system/monitoring.service; enabled; vendor preset: enabled)
-    Active: active (running) since Wed 2023-01-11 23:02:52 MSK; 1min 48s ago
-    Main PID: 1866 (node_exporter)
-    Tasks: 5 (limit: 4525)
-    Memory: 3.1M
-    CGroup: /system.slice/monitoring.service
-            └─1866 /usr/local/bin/node_exporter
-    ```
+      ```
+      bortnik@MyFirstVM:~$ sudo systemctl status monitoring.service
+      monitoring.service - Node Exporter
+      Loaded: loaded (/etc/systemd/system/monitoring.service; enabled; vendor preset: enabled)
+      Active: active (running) since Wed 2023-01-11 23:02:52 MSK; 1min 48s ago
+      Main PID: 1866 (node_exporter)
+      Tasks: 5 (limit: 4525)
+      Memory: 3.1M
+      CGroup: /system.slice/monitoring.service
+              └─1866 /usr/local/bin/node_exporter
+      ```
 1. Ознакомьтесь с опциями node_exporter и выводом /metrics по-умолчанию. Приведите несколько опций, которые вы бы выбрали для базового мониторинга хоста по CPU, памяти, диску и сети.
      * **Для CPU:**  
      node_cpu_seconds_total  
