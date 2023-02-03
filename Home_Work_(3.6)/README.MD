@@ -15,7 +15,7 @@
      * Укажите в ответе полученный HTTP код: <span style="color:red">**200**</span>
        ![Результат](https://gitlab.com/rainman1/devops-netology/raw/master/Home_Work_(3.6)/pics/header.jpg)
 
-    * Проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?<font color='red'> **stackoverflow.com** - 306 ms</font>
+    * Проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?${\color{green} stackoverflow.com}$ ${\color{red}-306ms}$
        ![Результат](https://gitlab.com/rainman1/devops-netology/raw/master/Home_Work_(3.6)/pics/process.jpg)
 1. Какой IP адрес у вас в интернете?
     * bortnik@sysadm-fs:~$ curl icanhazip.com  
