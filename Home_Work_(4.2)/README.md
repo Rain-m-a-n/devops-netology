@@ -195,18 +195,23 @@ while True:
 
 ### Вывод скрипта при запуске при тестировании:
 ```bash
-PS C:\Netology\git\devops-netology> & C:/Users/bortnikovsv/AppData/Local/Microsoft/WindowsApps/python3.10.exe "c:/Netology/git/devops-netology/Home_Work_(4.2)/2.py"
-drive.google.com         - 142.251.140.78
-mail.google.com          - 142.250.187.101
-google.com               - 142.250.187.142
+PS C:\Netology\git\devops-netology> & C:/Users/bortnikovsv/AppData/Local/Microsoft/WindowsApps/python3.10.exe "c:/Netology/git/devops-netology/Home_Work_(4.2)/Scripts/2.py"
 ******************************************
-drive.google.com         - 142.251.140.78
-mail.google.com          - 142.250.187.101
-google.com               - 142.250.187.142
+drive.google.com         - 172.217.17.110
+mail.google.com          - 142.250.184.133
+google.com               - 142.250.187.110
 ******************************************
-drive.google.com         - 142.251.140.78
-mail.google.com          - 142.250.187.101
-google.com               - 142.250.187.142
+
+******************************************
+drive.google.com         - 172.217.17.110
+mail.google.com          - 142.250.184.133
+google.com               - 142.250.187.110
+******************************************
+
+******************************************
+drive.google.com         - 172.217.17.110
+mail.google.com          - 142.250.184.133
+google.com               - 142.250.187.110
 ******************************************
 ```
 
