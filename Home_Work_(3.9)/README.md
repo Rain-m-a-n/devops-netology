@@ -19,7 +19,7 @@
          * sudo chown -R $USER:$USER /var/www/test
       * Создадим файл приветствия:
          * sudo nano /var/www/test/index.html 
-           ```
+           ```bash
            <html>
             <head>
              <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -46,7 +46,7 @@
       * Вместо изменения "дефолтного файла" 000-default.conf, создаём новый в том же расположении:
         * sudo nano /etc/apache2/sites-available/test.conf
         * Добавляем след. текст: 
-          ```
+          ```bash
           <VirtualHost *:80>
               Servername test
               Redirect / https://192.168.0.251/
@@ -84,7 +84,7 @@
 1. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
     * **Генерируем  RSA ключ:**
       * ssh-keygen -t rsa 
-        ```
+        ```bash
         bortnik@Server3:~/.ssh$ ssh-keygen -t rsa
         Generating public/private rsa key pair.
         Enter file in which to save the key (/home/bortnik/.ssh/id_rsa):
@@ -109,7 +109,7 @@
         ```
     * **Копируем ключ на машину, к которой планируем подключаться:**
       * bortnik@Server3:~/.ssh$ ssh-copy-id bortnik@192.168.0.252
-        ```
+        ```bash
         bortnik@Server3:~/.ssh$ ssh-copy-id bortnik@192.168.0.252
         /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/bortnik/.ssh/id_rsa.pub"
         The authenticity of host '192.168.0.252 (192.168.0.252)' can't be established.
@@ -125,7 +125,7 @@
         ```
     * Проверяем подключение к серверу по SSH без использования пароля: 
       * ssh bortnik@192.168.0.252
-        ```
+        ```bash
         bortnik@Server3:~/.ssh$ ssh bortnik@192.168.0.252
         Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-139-generic x86_64)
 
@@ -190,7 +190,7 @@
         ```
 1. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
     * **Собираем Dump:**
-      ```
+      ```bash
       bortnik@Server3:~$ sudo tcpdump -c 100 -w 100.pcap -i eth1
       tcpdump: listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
       100 packets captured

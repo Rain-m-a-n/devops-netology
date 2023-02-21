@@ -1,11 +1,11 @@
 1. Проверьте список доступных сетевых интерфейсов на вашем компьютере. Какие команды есть для этого в Linux и в Windows?  
      * **ls /sys/class/net**
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ ls /sys/class/net
        eth0  eth1  lo
        ```  
      * **ifconfig**  
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ ifconfig
        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
            inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
@@ -33,14 +33,14 @@
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
        ```
      * **ip a (ip -br link show)**
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ ip -br link show
        lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP>
        eth0             UP             08:00:27:59:cb:31 <BROADCAST,MULTICAST,UP,LOWER_UP>
        eth1             UP             08:00:27:e8:de:03 <BROADCAST,MULTICAST,UP,LOWER_UP>
        ```
      * **nmcli device status**
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ nmcli device status
        DEVICE  TYPE      STATE      CONNECTION
        eth0    ethernet  unmanaged  --
@@ -48,7 +48,7 @@
        lo      loopback  unmanaged  --
        ```
      * **netstat -i**
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ netstat -i
        Kernel Interface table
        Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
@@ -57,7 +57,7 @@
        lo       65536      254      0      0 0           254      0      0      0 LRU
        ```
      * **cat /proc/net/dev**
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ cat /proc/net/dev
        Inter-|   Receive                                                |  Transmit
         face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets 
@@ -67,7 +67,7 @@
        ```
      * **В Windows**  
        **ipconfig /all**  
-       ```
+       ```bash
        Адаптер Ethernet Ethernet 4:  
        DNS-суффикс подключения . . . . . : xxxxx.xxx  
        IPv4-адрес. . . . . . . . . . . . : 192.168.1.68  
@@ -78,7 +78,7 @@
     **LLDP** – информация о соседнем устройствеLLDP – протокол для обмена информацией между соседними устройствами, позволяет определить к какому порту коммутатора подключен сервер.   
     **Команда:** lldpctl
 3. Какая технология используется для разделения L2 коммутатора на несколько виртуальных сетей? Какой пакет и команды есть в Linux для этого? Приведите пример конфига.  
-    ```
+    ```bash
     vlan  
     vi /etc/network/interfaces  
   
@@ -110,7 +110,7 @@
     * **mode=6** (balance-alb)
     Адаптивная балансировка нагрузки (более совершенная). Обеспечивает балансировку нагрузки как исходящего так и входящего трафика (для IPv4 через ARP).
     * **конфиг:** */etc/network/interfaces*
-      ```
+      ```bash
       # The primary network interface
       auto bond0
       iface bond0 inet static
@@ -143,7 +143,7 @@
 7. Как проверить ARP таблицу в Linux, Windows? Как очистить ARP кеш полностью? Как из ARP таблицы удалить только один нужный IP?
   * в **Linux:**  
      * **arp -e**  (выводит arp записи)
-       ```
+       ```bash
        bortnik@sysadm-fs:~$ arp -e
        Address                  HWtype  HWaddress           Flags Mask            Iface
        10.0.2.3                 ether   52:54:00:12:35:03    C                     eth0

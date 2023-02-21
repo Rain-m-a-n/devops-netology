@@ -7,12 +7,12 @@
     * создал файл с помощью vim
     * удалил **swp**
     * **Команда:** lsof | grep deleted
-    ```
+    ```bash
     bortnik@MyFirstVM:~$ lsof | grep deleted
     vim       1965                        bortnik    3u      REG              253,0    12288    1310824 /home/bortnik/.test_proc.txt.swp (deleted)
     ```
     * ```Определяем дескриптор командой: ls -l /proc/<PID>/fd```
-    ```
+    ```bash
     bortnik@MyFirstVM:~$ ls -l /proc/1965/fd
     total 0
     lrwx------ 1 bortnik bortnik 64 Dec 31 05:23 0 -> /dev/pts/0
@@ -22,7 +22,7 @@
     ```
     * Обнуляем файл командой: ```> /proc/1965/fd/3```
     * Проверяем результат:
-    ```
+    ```bash
     bortnik@MyFirstVM:~$ lsof | grep deleted
     vim       1965                        bortnik    3u      REG              253,0        0    1310824 /home/bortnik/.test_proc.txt.swp (deleted)
     ```
@@ -30,7 +30,7 @@
     * Процесс при завершении (как нормальном, так и в результате не обрабатываемого сигнала) освобождает все свои ресурсы и становится «зомби» — пустой записью в таблице процессов, хранящей статус завершения, предназначенный для чтения родительским процессом.Зомби-процесс существует до тех пор, пока родительский процесс не прочитает его статус с помощью системного вызова wait(), в результате чего запись в таблице процессов будет освобождена.
 1. В iovisor BCC есть утилита opensnoop. На какие файлы вы увидели вызовы группы open за первую секунду работы утилиты?
     * 
-    ```
+    ```bash
     bortnik@MyFirstVM:~$ sudo opensnoop-bpfcc
     PID    COMM               FD ERR PATH
     1118   vminfo              5   0 /var/run/utmp

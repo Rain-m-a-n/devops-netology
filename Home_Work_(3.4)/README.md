@@ -1,6 +1,6 @@
 1. На лекции мы познакомились с node_exporter. В демонстрации его исполняемый файл запускался в background. Используя знания из лекции по systemd, создайте самостоятельно простой unit-файл для node_exporter:
     * Создал UNIT в папке /etc/systemd/system/**monitoring.service**
-      ```
+      ```bash
       [Unit]
       Description=Node Exporter
       After=network.target
@@ -24,7 +24,7 @@
         
     - Поместите его в автозагрузку:  
     *sudo systemctl enable monitoring.service*  
-      ```
+      ```bash
       bortnik@MyFirstVM:~$ sudo systemctl status monitoring.service
       monitoring.service - Node Exporter
       Loaded: loaded (/etc/systemd/system/monitoring.service; enabled; vendor preset: enabled)
@@ -62,33 +62,33 @@
     * **Netdata** - собирает метрики по большому количеству показателей: CPUs, Memory, Disk, Networking stack, IPv4/IPv6 Networking, Network Interface, Systemd Services, Aplications, User Groups, Users, Netdata Monitoring/
 1. Можно ли по выводу dmesg понять, осознает ли ОС, что загружена не на настоящем оборудовании, а на системе виртуализации?
     * Можно это понять по выводу команды: **dmesg | grep -i dmi**
-      ```
+      ```bash
       bortnik@MyFirstVM:~$ dmesg | grep -i dmi
       [    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
       [    0.239274] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
       ```
       В выводе видно, что система запущена на VirtualBox. 
     * На физическом устройстве будет вывод производителя: 
-      ```
+      ```bash
       stas ~ $ dmesg | grep -i dmi
       [    0.000000] DMI: Hewlett-Packard HP ProBook 430 G2/2246, BIOS M73 Ver. 01.15 07/24/2015
       ```
 1. Как настроен sysctl fs.nr_open на системе по-умолчанию? Определите, что означает этот параметр. Какой другой существующий лимит не позволит достичь такого числа (ulimit --help)?    
     * Этот параметр задаёт количество открытых дескрипторов в системе. Т.е. любой процесс в системе не сможет открыть более 1048576 файлов. 
-      ```
+      ```bash
       bortnik@MyFirstVM:~$ sysctl fs.nr_open
       fs.nr_open = 1048576
       ```
     * Значение "по-умолчанию" можно изменить, для этого редактируем файл:   
     **sudo vi /etc/sysctl.conf** и добавляем строку *fs.nr_open = 1025*. Теперь при выполнении той же команды увидим вывод:
-      ``` 
+      ```bash
        bortnik@MyFirstVM:~$ sysctl fs.nr_open
        fs.nr_open = 1025
       ```
 1. Запустите любой долгоживущий процесс в отдельном неймспейсе процессов; покажите, что ваш процесс работает под PID 1 через nsenter. Для простоты работайте в данном задании под root (sudo -i). Под обычным пользователем требуются дополнительные опции (--map-root-user) и т.д.
     * Запустим процесс в отдельном namespace: **sudo unshare --fork --pid --mount-proc sleep 1h**
     * Подключиться к другой сессии и найти PID процесса
-      ```
+      ```bash
       bortnik@MyFirstVM:~$ ps aux | grep sleep
       root        1638  0.0  0.1   9260  4624 pts/0    S+   21:12   0:00 sudo unshare --fork --pid --mount-proc sleep 1h
       root        1639  0.0  0.0   5480   580 pts/0    S+   21:12   0:00 unshare --fork --pid --mount-proc sleep 1h
@@ -97,7 +97,7 @@
       ```
     * Целевой процесс для получения пространств имен из: **sudo nsenter -t 1640 --pid --mount**
     * Проверить PID 
-      ```
+      ```bash
       root@MyFirstVM:/# ps aux
       USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
       root           1  0.0  0.0   5476   580 pts/0    S+   21:12   0:00 sleep 1h
@@ -113,12 +113,12 @@
        * приоритизацию  
        * изоляцию. 
     * Как изменить число процессов, которое можно создать в сессии?
-        ```
+        ```bash
         bortnik@MyFirstVM:~$ ulimit -Hu
         15222
         ```
         Изменить командой: ulimit -u <число> 
-        ```
+        ```bash
         bortnik@MyFirstVM:~$ ulimit -u 1500
         bortnik@MyFirstVM:~$ ulimit -Hu
         1500

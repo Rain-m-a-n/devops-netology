@@ -2,7 +2,7 @@
 
 1. С помощью базового файла конфигурации запустите Ubuntu 20.04 в VirtualBox посредством Vagrant:
     1. базовый файл подправил:
-``` 
+```bash
     Vagrant.configure("2") do |config|
  	config.vm.box = "bento/ubuntu-20.04"
 	config.vm.box_check_update = false
@@ -34,7 +34,7 @@
 1. В man bash поищите по ```/\[\[```. Что делает конструкция [[ -d /tmp ]]?
     * [[ expression ]] - при вроверке условий возращает значение 0 или 1.
     * Конструкция проверяет наличие директории:
-        ```
+        ```bash
         if [[ -d /tmp ]]
           then
             echo "Указанный каталог существует"

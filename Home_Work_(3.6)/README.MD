@@ -5,7 +5,7 @@
         * *GET /questions HTTP/1.0*  
           *HOST: stackoverflow.com*
     * Результат запроса:
-      ``` 
+      ```bash
         HTTP/1.1 403 Forbidden
         Connection: close
       ```
@@ -26,12 +26,12 @@
      inetnum:        84.21.xxx.xxx - 84.21.xxx.xxx  
      netname:        **RU-TELECOMSERVICEVRN-20181004**  
     * Автономная система:  **AS60840** 
-      ```
+      ```bash
       bortnik@sysadm-fs:~$ whois 84.21.xxx.xxx | grep origin
       origin:         AS60840
       ``` 
 1. Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS?
-    ```
+    ```bash
     bortnik@sysadm-fs:~$ traceroute -AI 8.8.8.8  
     traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets  
     1  _gateway (10.0.2.2) [*]  0.144 ms  0.121 ms  0.118 ms
@@ -53,7 +53,7 @@
       **[AS15169]**  
       **[AS15169/AS263411]**  
 1. Повторите задание 5 в утилите mtr. На каком участке наибольшая задержка - delay?
-   ```
+   ```bash
    bortnik@sysadm-fs:~$ mtr -r 8.8.8.8
    Start: 2023-01-24T20:57:27+0000
    HOST: sysadm-fs                   Loss%   Snt   Last   Avg  Best  Wrst StDev
@@ -81,12 +81,12 @@
    22.|-- dns.google                 0.0%    10   28.7  29.0  28.3  29.6   0.4
    ```
      * Наибольшая задержка на 10 hope:
-       ```
+       ```bash
        HOST: sysadm-fs                   Loss%   Snt   Last   Avg  Best  Wrst StDev
        10.|-- 216.239.49.115             0.0%    10   29.7  30.5  29.7  31.3   0.5
 1. Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи?
     * Запрос NS-записи: **dig NS dns.google**
-      ```
+      ```bash
       bortnik@sysadm-fs:~$ dig NS dns.google  
       ; <<>> DiG 9.16.1-Ubuntu <<>> NS dns.google
       ;; global options: +cmd
@@ -106,7 +106,7 @@
       dns.google.             6857    IN      NS      ns3.zdns.google.
       ```
     * Запрос А записи: **dig dns.google**
-      ```
+      ```bash
       bortnik@sysadm-fs:~$ dig dns.google
 
       ; <<>> DiG 9.16.1-Ubuntu <<>> dns.google
@@ -131,7 +131,7 @@
       ```
 1. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? 
       * Команда: **dig -x 8.8.4.4**
-        ```
+        ```bash
         ; <<>> DiG 9.16.1-Ubuntu <<>> -x 8.8.4.4
         ;; global options: +cmd
         ;; Got answer:

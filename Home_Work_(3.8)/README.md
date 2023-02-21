@@ -1,5 +1,5 @@
 1. Подключитесь к публичному маршрутизатору в интернет. Найдите маршрут к вашему публичному IP
-    ```
+    ```bash
     route-views>show ip route xxx.xxx.xxx.xxx
     Routing entry for xxx.xxx.xxx.0/24
     Known via "bgp 6447", distance 20, metric 0
@@ -12,7 +12,7 @@
         Route tag 6939
         MPLS label: none
     ```
-    ```
+    ```bash
     route-views>show bgp xxx.xxx.xxx.xxx
     BGP routing table entry for xxx.xxx.xxx.0/24, version 2676728105
     Paths: (19 available, best #3, table default)
@@ -43,7 +43,7 @@
           rx pathid: 0, tx pathid: 0
     ```
 1. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
-    * ```
+    * ```bash
       root@sysadm-fs:/home/bortnik# ip -br a
       lo               UNKNOWN        127.0.0.1/8 ::1/128
       eth0             UP             10.0.2.15/24 fe80::a00:27ff:fe59:cb31/64
@@ -51,7 +51,7 @@
       dummy0           UNKNOWN        192.168.1.160/24 fe80::475:fff:fe0d:379d/64
       dummy1           UNKNOWN        192.168.1.170/24 fe80::acf7:e7ff:fe80:a57c/64
       ```
-    * ```
+    * ```bash
       root@sysadm-fs:/home/bortnik# ip route add 100.100.1.0/24 dev eth1  
       root@sysadm-fs:/home/bortnik# ip route add 100.200.1.0/24 dev eth0  
       root@sysadm-fs:/home/bortnik# route -n  
@@ -68,7 +68,7 @@
       ```
 1. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
    * **netstat -plnt**
-   ```
+   ```bash
    Active Internet connections (only servers)
    Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/   Program name
    tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      823/systemd-resolve
@@ -79,7 +79,7 @@
    port ${\color{red}22}$ - SSH
 1. Проверьте используемые UDP сокеты в Ubuntu, какие протоколы и приложения используют эти порты?
    * **netstat -plnu**  
-   ```
+   ```bash
     Active Internet connections (only servers)  
     Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name  
     udp        0      0 127.0.0.53:53           0.0.0.0:*                           823/systemd-resolve  
