@@ -24,11 +24,11 @@ while True:
             print (f"google.com\t\t" , "-", goog)
         else:
             if test == site[0]:
-                print (f"[ERROR]", test, "IP mismatch:", d, ">", new_addr)
+                print (f"[ERROR]", test, "IP mismatch:", d, ">", new_addr[0])
             elif test == site[1]:
-                print (f"[ERROR]", test, "IP mismatch:", m, ">", new_addr)
+                print (f"[ERROR]", test, "IP mismatch:", m, ">", new_addr[0])
             elif test == site[2]:
-                print (f"[ERROR]", test, "IP mismatch:", m, ">", new_addr)
+                print (f"[ERROR]", test, "IP mismatch:", goog, ">", new_addr[0])
             else:
                break
     print("******************************************\n")
