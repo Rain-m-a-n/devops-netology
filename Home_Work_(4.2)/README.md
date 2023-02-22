@@ -159,37 +159,23 @@ PS C:\Netology\git\devops-netology>
 import time
 import socket
 
-site= ["drive.google.com", "mail.google.com", "google.com"]
-#Определяем IP 
-d=(socket.gethostbyname_ex(site[0]))[2]
-m=(socket.gethostbyname_ex(site[1]))[2]
-g=(socket.gethostbyname_ex(site[2]))[2]
+site = {"drive.google.com": 0, "mail.google.com": 0, "google.com": 0}
 
-#Преобразуем в число
-drive=str(d)[2:-2]
-mail=str(m)[2:-2]
-goog=str(g)[2:-2]
+Определяем IP и заменяем значения в словаре
+for host in site:
+    addr = socket.gethostbyname(host)
+    site[host] = addr
 
 while True:
-    print("******************************************")
-    for test in site:
-        new_addr=socket.gethostbyname_ex(test)[2]
-        if new_addr ==d:
-            print(f"drive.google.com\t" , "-", drive)
-        elif new_addr == m:
-            print (f"mail.google.com\t\t" , "-", mail)
-        elif new_addr == g:
-            print (f"google.com\t\t" , "-", goog)
+    print("******************************************") 
+    for host in site:
+        new_addr = socket.gethostbyname(host)
+        old_addr = site[host] 
+        if new_addr != old_addr:
+            site[host] = new_addr
+            print (f"[ERROR]  ", host, "IP mismatch:\t", "old_IP  ", old_addr, " > ", "new_IP  ",new_addr)
         else:
-            if test == site[0]:
-                print (f"[ERROR]", test, "IP mismatch:", d, ">", new_addr)
-            elif test == site[1]:
-                print (f"[ERROR]", test, "IP mismatch:", m, ">", new_addr)
-            elif test == site[2]:
-                print (f"[ERROR]", test, "IP mismatch:", m, ">", new_addr)
-            else:
-               break
-    print("******************************************\n")
+            print(host,"      \t" ,  new_addr)
     time.sleep(10)
 ```
 
@@ -197,32 +183,24 @@ while True:
 
 1. Если адреса совпадают: 
 ```bash
-PS C:\Netology\git\devops-netology> & C:/Users/bortnikovsv/AppData/Local/Microsoft/WindowsApps/python3.10.exe "c:/Netology/git/devops-netology/Home_Work_(4.2)/Scripts/2.py"
+PS C:\Netology\git\devops-netology> & C:/Users/bortnikovsv/AppData/Local/Microsoft/WindowsApps/python3.10.exe "c:/Netology/git/devops-netology/Home_Work_(4.2)/Scripts/3.py"
 ******************************************
-drive.google.com         - 172.217.17.110
-mail.google.com          - 142.250.184.133
-google.com               - 142.250.187.110
-******************************************
-
-******************************************
-drive.google.com         - 172.217.17.110
-mail.google.com          - 142.250.184.133
-google.com               - 142.250.187.110
-******************************************
-
-******************************************
-drive.google.com         - 172.217.17.110
-mail.google.com          - 142.250.184.133
-google.com               - 142.250.187.110
+drive.google.com         142.250.186.142
+mail.google.com          172.217.16.197
+google.com               142.250.186.174
 ******************************************
 ```
 2. Если адрес меняется:
 ```bash
+PS C:\Netology\git\devops-netology> & C:/Users/bortnikovsv/AppData/Local/Microsoft/WindowsApps/python3.10.exe "c:/Netology/git/devops-netology/Home_Work_(4.2)/Scripts/3.py"
 ******************************************
-drive.google.com         - 142.251.140.78
-mail.google.com          - 142.250.187.101
-[ERROR] google.com IP mismatch: 142.251.1.113 > 142.250.187.142
+[ERROR]   drive.google.com IP mismatch:  old_IP   0  >  new_IP   142.250.186.142
+[ERROR]   mail.google.com IP mismatch:   old_IP   0  >  new_IP   172.217.16.197
+[ERROR]   google.com IP mismatch:        old_IP   0  >  new_IP   142.250.186.174
 ******************************************
+drive.google.com         142.250.186.142
+mail.google.com          172.217.16.197
+google.com               142.250.186.174
 ```
 ------
 
