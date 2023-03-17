@@ -89,6 +89,6 @@
    port ${\color{red}53}$ - DNS  
    port ${\color{red}68}$ -  для клиентов бездисковых рабочих станций, загружающихся с сервера BOOTP; также используется DHCP
 1. Используя diagrams.net, создайте L3 диаграмму вашей домашней сети или любой другой сети, с которой вы работали.
-  ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.8)/pic/network.jpg)
+  ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное_администрирование/Home_Work_(3.8)/pic/network.jpg)
 
  
