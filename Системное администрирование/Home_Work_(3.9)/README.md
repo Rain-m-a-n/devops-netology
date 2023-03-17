@@ -1,6 +1,6 @@
 1. Установите Bitwarden плагин для браузера. Зарегестрируйтесь и сохраните несколько паролей.
 1. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через Google authenticator OTP.  
-![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/auth.jpg)
+![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/auth.jpg)
 1. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
     * Устанавливаем Apache:
       * sudo apt update - обновление базы данных пакетов
@@ -8,11 +8,11 @@
       * sudo ufw app list - выводит список профилей Брандмауэра
       * sudo ufw allow Apache Full - открываем порт 80 и 443
       * sudo ufw status - проверяем корректность выполненных настроек  
-        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/ufw.jpg)
+        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/ufw.jpg)
       * sudo systemctl status apache2 - проверяем работу службы,если    всё настроено корректно, получим такой вывод:  
-        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/apache.jpg)
+        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/apache.jpg)
       * Проверим в браузере работу веб-сервера, для этого введём в нём IP адрес сервера:  
-        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/apache2.jpg)
+        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/apache2.jpg)
       * настроим виртуальный хост, для этого предварительно создадим папку (test) по пути (/var/www/)- это расположение будет для наполнения сайта.
          * sudo mkdir /var/www/test
       * Назначим владельца папки: 
@@ -76,11 +76,11 @@
       * Перезапускаем Apache2:
         * systemctl restart apache2
       * В браузере вводим http://IP_server и должны получить такой результат:  
-        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/apache3.jpg)
+        ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/apache3.jpg)
 1. Проверьте на TLS уязвимости произвольный сайт в интернете ( для теста взят сайт auto.ru):
     * Для тестирования использовался ресурс [SSL Labs](https://www.ssllabs.com/ssltest/)
     * Результат тестирования:  
-     ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/ssl.jpg)
+     ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/ssl.jpg)
 1. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
     * **Генерируем  RSA ключ:**
       * ssh-keygen -t rsa 
@@ -198,7 +198,7 @@
       0 packets dropped by kernel
       ```
     * **Открываем файл Wireshark:**   
-      ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Home_Work_(3.9)/pic/shark.jpg).
+      ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Системное администрирование/Home_Work_(3.9)/pic/shark.jpg).
           
 
 
