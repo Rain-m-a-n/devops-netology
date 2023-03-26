@@ -37,7 +37,7 @@ Hey, Netology
 * *Узнаем адрес контейнера и перезапускаем nginx:*
     * service nginx restart && hostname -I 
 * *Открывает браузер и вводим адрес контейнера (вывод должен быть таким):*   
-    ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Виртуализация/Home_Work_(5.3)/pic/nginx.png)
+    ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Виртуализация/Home_Work_(5.3)/pics/nginx.png)
 * *Создаём образ текущего контейнера:*
     * docker commit -m "nginx_test" -a "BortnikovSV" fb79bcb4ac51 **xxxxx**/nginx_v2  
     (где **ххххх** - имя пользователя при регистрации на ресурсе)
@@ -85,7 +85,7 @@ Hey, Netology
 * Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /data контейнера.  
 
   #### **Ответ**
-  ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Виртуализация/Home_Work_(5.3)/pic/answer.png)
+  ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Виртуализация/Home_Work_(5.3)/pics/answer.png)
 ### **Задача 4 (*)**
 *Воспроизведите практическую часть лекции самостоятельно.*
 
