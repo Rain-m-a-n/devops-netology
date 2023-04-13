@@ -19,7 +19,7 @@ _Создайте ваш первый Docker Swarm-кластер в Яндек�
 
 docker node ls   
 ![Результат](https://github.com/Rain-m-a-n/devops-netology/raw/master/Виртуализация/Home_Work_(5.5)/pics/cluster.png)
-
+ 
 
 ### Задача 3
 
