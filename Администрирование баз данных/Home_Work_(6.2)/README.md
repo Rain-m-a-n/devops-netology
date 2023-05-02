@@ -11,31 +11,31 @@
 *В БД из задачи 1:*
 
 * создайте пользователя test-admin-user и БД test_db;
-  ```postgres
+  ```sql
   post=# CREATE DATABASE test_db;
   CREATE DATABASE
   post=# CREATE USER "test-admin-user";
   CREATE ROLE
   ```
 * в БД test_db создайте таблицу orders и clients (спeцификация таблиц ниже);
-  ```postgres
+  ```sql
   test_db=# CREATE TABLE orders (id integer, name varchar(20), cost integer, PRIMARY KEY(id));
   CREATE TABLE
   test_db=# CREATE TABLE clients (id integer PRIMARY KEY, surname varchar(20), country varchar(20), indent integer, FOREIGN KEY (indent) REFERENCES orders(id));
   CREATE TABLE
   ``` 
 * предоставьте привилегии на все операции пользователю test-admin-user на таблицы БД test_db;
-  ```postgres
+  ```sql
   post=# GRANT ALL PRIVILEGES ON DATABASE test_db TO "test-admin-user";
   GRANT
   ```
 * создайте пользователя test-simple-user;
-  ```postgres
+  ```sql
   post=# CREATE USER "test-simple-user" WITH PASSWORD 'test';
   CREATE ROLE
   ```
 * предоставьте пользователю test-simple-user права на SELECT/INSERT/UPDATE/DELETE этих таблиц БД test_db.
-  ```postgres
+  ```sql
   test_db=# GRANT SELECT, INSERT, UPDATE, DELETE ON orders to "test-simple-user";
   GRANT
   test_db=# GRANT SELECT, INSERT, UPDATE, DELETE ON clients to "test-simple-user";
@@ -47,12 +47,12 @@
   | id (serial primary key)| id (serial primary key)|
   | наименование (string)|фамилия (string)
   |цена (integer)|страна проживания (string, index)
-  |             |   заказ (foreign key orders)
+  |   заказ           | integer  (foreign key orders)
   ---
 *Приведите:*
 
 * итоговый список БД после выполнения пунктов выше;
-```postgres
+```sql
 post=# \l+
                                                                     List of databases
    Name    | Owner | Encoding |  Collate   |   Ctype    |     Access privileges      |  Size   | Tablespace |                Description                 
@@ -71,7 +71,7 @@ post=# \l+
 ```
 
 * описание таблиц (describe);
-```postgres
+```sql
 test_db=# \d+
                     List of relations
  Schema |  Name   | Type  | Owner |  Size   | Description 
@@ -81,7 +81,7 @@ test_db=# \d+
 (2 rows)
 ```
 * SQL-запрос для выдачи списка пользователей с правами над таблицами test_db;
-```postgres
+```sql
 test_db=# SELECT grantee, table_name, privilege_type, is_grantable FROM information_schema.table_privileges Where table_catalog = 'test_db' AND table_schema = 'public';
      grantee      | table_name | privilege_type | is_grantable 
 ------------------+------------+----------------+--------------
@@ -111,7 +111,7 @@ test_db=# SELECT grantee, table_name, privilege_type, is_grantable FROM informat
 
 ```
 * список пользователей с правами над таблицами test_db.
-```postgres
+```sql
 test_db=# \du
                                        List of roles
     Role name     |                         Attributes                         | Member of 
@@ -128,25 +128,27 @@ test_db=# \du
 
 **Таблица orders**
 
-Наименование	цена  
-Шоколад	10  
-Принтер	3000  
-Книга	500  
-Монитор	7000  
-Гитара	4000  
+|Наименование	|цена|
+| ----- | -----|   
+|Шоколад|	10 | 
+|Принтер |	3000 | 
+|Книга	|500|  
+|Монитор |	7000 | 
+|Гитара	|4000  
 
-```postgres
+```sql
 test_db=#INSERT INTO orders (id,name,cost) VALUES (1,'Шоколад',10),(2,'Принтер', 3000),(3,'Книга',500),(4,'Монитор',7000),(5,'Гитара',4000);
 INSERT 0 5
 ```
 **Таблица clients**  
-ФИО	Страна проживания  
-Иванов Иван Иванович	USA  
-Петров Петр Петрович	Canada  
-Иоганн Себастьян Бах	Japan  
-Ронни Джеймс Дио	Russia  
-Ritchie Blackmore	Russia  
-```postgres
+|ФИО	|Страна проживания|  
+| ----- | -----|
+|Иванов Иван Иванович	|USA  
+|Петров Петр Петрович	|Canada  
+|Иоганн Себастьян Бах	|Japan  
+|Ронни Джеймс Дио	|Russia  
+|Ritchie Blackmore	|Russia  
+```sql
 test_db=# INSERT INTO clients (id,surname,country) VALUES (1,'Иванов Иван Иванович','USA'),(2,'Петров Петр Петрович','Canada'),(3,'Иоганн Себасьян Бах','Japan'),(4,'Ронни Джеймс Дио','Russia'),(5,'Ritchie Blackmore','Russia');
 INSERT 0 5
 ```
@@ -158,7 +160,7 @@ INSERT 0 5
 
 - запросы,
 - результаты их выполнения.
-  ```postgres
+  ```sql
   test_db=# SELECT 'orders' AS name_table, count(*) AS number_line FROM orders UNION SELECT 'clients' AS name_table, count(*) AS number_line FROM clients;
   name_table | number_line 
   -----------+-------------
@@ -180,7 +182,7 @@ INSERT 0 5
 
 
 * Приведите SQL-запросы для выполнения этих операций.  
-```postgres
+```sql
 test_db=# UPDATE clients SET "indent"=3 WHERE id=1;
 UPDATE 1
 test_db=# UPDATE clients SET "indent"=4 WHERE id=2;
@@ -189,7 +191,7 @@ test_db=# UPDATE clients SET "indent"=5 WHERE id=3;
 UPDATE 1
 ```
 * Приведите SQL-запрос для выдачи всех пользователей, которые совершили заказ, а также вывод этого запроса.
-```postgres
+```sql
 test_db=# SELECT surname,indent,orders."name" FROM clients JOIN orders ON "indent"=orders."id";
        surname        | indent |  name   
 ----------------------+--------+---------
@@ -206,7 +208,7 @@ test_db=# SELECT surname,indent,orders."name" FROM clients JOIN orders ON "inden
 *Получите полную информацию по выполнению запроса выдачи всех пользователей из задачи 4 (используя директиву EXPLAIN).*
 
 Приведите получившийся результат и объясните, что значат полученные значения.
-```postgres
+```sql
 test_db=# EXPLAIN SELECT * FROM clients WHERE "indent" IS NOT null;
                          QUERY PLAN                         
 ------------------------------------------------------------
@@ -251,7 +253,7 @@ d5fa05476dde   postgres:12   "docker-entrypoint.s…"   50 minutes ago   Up 50 m
 root@d5fa05476dde:/# 
 ```
 Восстановите БД test_db в новом контейнере.
-```postgres
+```sql
 postgres=# CREATE DATABASE test_db;
 CREATE DATABASE
 test_db=# CREATE USER "test-admin-user";
