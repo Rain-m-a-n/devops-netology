@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+    volumes:
+      - /Users/bortikovsv/VM_Postgres/backup:/db_backup
+      - /Users/bortikovsv/VM_Postgres/main:/db_data
+
