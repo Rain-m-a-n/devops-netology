@@ -2,11 +2,11 @@
 
 *Используя Docker, поднимите инстанс MySQL (версию 8). Данные БД сохраните в volume.*
 [файл](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20баз%20данных/Home_Work_(6.3)/docker-compose.yml)
-``` bash
-[~]$ docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                 NAMES
-0af17405b4d3   mysql:8   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   3306/tcp, 33060/tcp   MySQL_test
-```
+  ``` bash
+  [~]$ docker ps
+  CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                 NAMES
+  0af17405b4d3   mysql:8   "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   3306/tcp, 33060/tcp   MySQL_test
+  ```
 * Изучите бэкап БД и восстановитесь из него.
   ```bash
   bash-4.4# mysql -u root -p test_db < /db_backup/test_dump.sql 
