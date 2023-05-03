@@ -230,12 +230,13 @@
  
   !includedir /etc/mysql/conf.d/
 
-  innodb_flush_log_at_trx_commit=0
+  innodb_flush_log_at_trx_commit=2
   innodb_file_format=Barracuda
-  #Barracuda -is the newest file format. It supports all InnoDB row formats including the newer COMPRESSED and DYNAMIC row formats
+    #Barracuda -is the newest file format. It supports all InnoDB row formats including the newer COMPRESSED and DYNAMIC row formats
   innodb_log_buffer_size=1M
   # bash-4.4# cat /proc/meminfo | grep -i memtotal
   # MemTotal:        4027844 kB
+  innodb_file_per_table=1
   innodb_buffer_pool_size=1.2G
   innodb_log_file_size=100M
   ```
