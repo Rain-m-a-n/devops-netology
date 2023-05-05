@@ -27,3 +27,5 @@
 * Home_Work_(6.1) - Типы и структура СУБД
 * Home_Work_(6.2) - SQL
 * Home_Work_(6.3) - MySQL
+* Home_Work_(6.4) - PostgreSQL
+* Home_Work_(6.5) - Elasticsearch
