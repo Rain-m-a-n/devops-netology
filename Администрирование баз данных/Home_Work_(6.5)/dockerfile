@@ -1,0 +1,19 @@
+FROM centos:7
+COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz  /opt
+COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512  /opt	
+
+WORKDIR /opt/
+RUN groupadd elasticsearch && \
+    useradd -c "elasticsearch" -g elasticsearch elasticsearch &&\
+    yum update -y && yum -y install perl-Digest-SHA && \
+    shasum -a 512 -c elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512 && \
+    tar -xzf elasticsearch-8.7.1-linux-x86_64.tar.gz && \
+    rm elasticsearch-8.7.1-linux-x86_64.tar.gz elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512 
+RUN mkdir /var/lib/data && chmod -R 777 /var/lib/data && \
+    chown -R elasticsearch:elasticsearch /opt/elasticsearch-8.2.0 && \
+    yum clean all
+USER elasticsearch
+WORKDIR /opt/elasticsearch-8.7.1/
+COPY ./elasticsearch.yml  config/
+EXPOSE 9200 9300
+ENTRYPOINT ["bin/elasticsearch"]
