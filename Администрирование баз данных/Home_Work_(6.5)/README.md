@@ -15,29 +15,32 @@
 
 * текст Dockerfile-манифеста,
   * т.к. при настройке файла качать через VPN было каждый раз долго, скачал архив и в манифесте поэтому локальный путь:
-    ```bash
+    ```dockerfile
     FROM centos:7
-    COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz /opt
-    COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512 /opt
-    RUN yum update && yum upgrade -y  
-    RUN yum install -y perl-Digest-SHA
-    RUN cd /opt && groupadd elasticsearch && useradd -g elasticsearch -p elasticsearch elasticsearch
+    COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz  /opt
+    COPY ./elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512  /opt	
+
     WORKDIR /opt/
-    RUN shasum -a 512 -c elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512
-    RUN tar -xzfv /opt/elasticsearch-8.7.1-linux-x86_64.tar.gz
-    RUN mkdir /var/lib/data && chmod -R 777 /var/lib/data
-    RUN chown -R elasticsearch:elasticsearch /opt/elasticsearch-8.7.1/ && yum clean all
+    RUN groupadd elasticsearch && \
+        useradd -c "elasticsearch" -g elasticsearch elasticsearch &&\
+        yum update -y && yum -y install perl-Digest-SHA && \
+        shasum -a 512 -c elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512 && \
+        tar -xzf elasticsearch-8.7.1-linux-x86_64.tar.gz && \
+        rm elasticsearch-8.7.1-linux-x86_64.tar.gz elasticsearch-8.7.1-linux-x86_64.tar.gz.sha512 
+    RUN mkdir /var/lib/data && chmod -R 777 /var/lib/data && \
+        chown -R elasticsearch:elasticsearch /opt/elasticsearch-8.2.0 && \
+        yum clean all
     USER elasticsearch
     WORKDIR /opt/elasticsearch-8.7.1/
-    COPY elasticsearch.yml config/
-    EXPOSE 9200 9300 
+    COPY ./elasticsearch.yml  config/
+    EXPOSE 9200 9300
     ENTRYPOINT ["bin/elasticsearch"]
     ```
 * ссылку на образ в репозитории dockerhub,  
   [Ссылка](https://hub.docker.com/layers/bsv27/elastic/v4/images/sha256-20466c2fbd7a5fa950b0bdeb64893c2e7350ef2067d2b9568f03473f5cb26517?context=repo)
 * ответ Elasticsearch на запрос пути / в json-виде.
   ```json
-  [elasticsearch@31021941874d elasticsearch-8.7.1]$ curl --insecure -u elastic https://localhost:9200
+  [elasticsearch@31021941874d elasticsearch-8.7.1]$ curl --insecure -u elastic "https://localhost:9200"
   Enter host password for user 'elastic':
   {
     "name" : "netology_test",
@@ -94,7 +97,7 @@
 
   ```
 * Получите состояние кластера Elasticsearch, используя API.
-  ```bash
+  ```json
   [elasticsearch@31021941874d elasticsearch-8.7.1]$ curl -X GET --insecure -u elastic:elastic "https://localhost:9200/_cluster/health?pretty"
   {
     "cluster_name" : "elasticsearch",
