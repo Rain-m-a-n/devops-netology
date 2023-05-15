@@ -29,3 +29,6 @@
 * Home_Work_(6.3) - MySQL
 * Home_Work_(6.4) - PostgreSQL
 * Home_Work_(6.5) - Elasticsearch
+
+## Облачная инфраструктура. Terraform
+* Home_Work_(7.1) - Введение в Terraform

@@ -165,5 +165,48 @@ shekeriev.
 2. Создайте с его помощью любую виртуальную машину.
 
 В качестве ответа приложите plan для создаваемого ресурса.
+* По совету экспертов, сменил образ.
+В качестве ответа приложите plan для создаваемого ресурса.
+    ```bash
+    stas@stas-home:/media/stas/SSD3/devops/Netology/Github/devops-netology/Облачная 
+    инфраструктура. Terraform/Home_Work_(7.1)/src1$ terraform plan
+
+    Terraform used the selected providers to generate the following execution plan.
+    Resource actions are indicated with the following symbols:
+    + create
+
+    Terraform will perform the following actions:
+
+    # virtualbox_vm.vm1 will be created
+    + resource "virtualbox_vm" "vm1" {
+        + cpus   = 1
+        + id     = (known after apply)
+        + image  = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box"
+        + memory = "512 mib"
+        + name   = "centos-7.0"
+        + status = "running"
+  
+        + network_adapter {
+            + device                 = "IntelPro1000MTDesktop"
+            + host_interface         = "vboxnet0"
+            + ipv4_address           = (known after apply)
+            + ipv4_address_available = (known after apply)
+            + mac_address            = (known after apply)
+            + status                 = (known after apply)
+            + type                   = "hostonly"
+          }
+      }
+
+     Plan: 1 to add, 0 to change, 0 to destroy.
+
+     Changes to Outputs:
+       + IPAddress = (known after apply)
+  
+     ───────────────────────────────────────────────────────────────────────────────
+
+     Note: You didn't use the -out option to save this plan, so Terraform can't
+     guarantee to take exactly these actions if you run "terraform apply" now.
+     ```
+------
 
 ------
