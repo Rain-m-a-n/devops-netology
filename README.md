@@ -32,3 +32,5 @@
 
 ## Облачная инфраструктура. Terraform
 * Home_Work_(7.1) - Введение в Terraform
+* Home_Work_(7.2) - Основы Terraform. Yandex Cloud
+* Home_Work_(7.3) - Управляющие конструкции в коде Terraform
