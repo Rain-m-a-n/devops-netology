@@ -79,9 +79,10 @@
 ### Задание 3
 
 1. Создайте 3 одинаковых виртуальных диска, размером 1 Гб с помощью ресурса yandex_compute_disk и мета-аргумента count в файле **disk_vm.tf** .
+![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/Облачная%20инфраструктура.%20Terraform/Home_Work_(7.3)/pics/disks.png) 
 2. Создайте в том же файле одну **любую** ВМ. Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
 3. Назначьте ВМ созданную в 1-м задании группу безопасности.
-
+![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/Облачная%20инфраструктура.%20Terraform/Home_Work_(7.3)/pics/secure.png) 
 ------
 
 ### Задание 4
