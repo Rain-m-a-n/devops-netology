@@ -1,5 +1,8 @@
 # **devops-netology**
+
 ## Системное администрирование
+<details><summary>Домашние задания</summary>
+
 * Home_Work_(2.1) - Системы контроля версий
 * Home_Work_(2.2) - Основы Git
 * Home_Work_(2.3) - Ветвления в Git
@@ -16,21 +19,38 @@
 * Home_Work_(4.1) - Командная оболочка Bash
 * Home_Work_(4.2) - Использование Python для решения типовых DevOps задач.
 * Home_Work_(4.3) - Языки разметки JSON и YAML
+</details>
+
 ## Виртуализация
+<details><summary>Домашние задания</summary>
+
 * Home_Work_(5.1) - Введение в виртуализацию. Типы и функции гипервизоров.
 * Home_Work_(5.2) - Применение принципов IaaC в работе с виртуальными машинами
 * Home_Work_(5.3) - Введение. Экосистема. Архитектура. Жизненный цикл Docker-контейнера
 * Home_Work_(5.4) - Оркестрация группой Docker-контейнеров на примере Docker Compose
 * Home_work_(5.5) - Оркестрация кластером Docker контейнеров на примере Docker Swarm
+</details>
 
 ## Администрирование баз данных
+<details><summary>Домашние задания</summary>
+
 * Home_Work_(6.1) - Типы и структура СУБД
 * Home_Work_(6.2) - SQL
 * Home_Work_(6.3) - MySQL
 * Home_Work_(6.4) - PostgreSQL
 * Home_Work_(6.5) - Elasticsearch
+</details>
 
 ## Облачная инфраструктура. Terraform
-* Home_Work_(7.1) - Введение в Terraform
-* Home_Work_(7.2) - Основы Terraform. Yandex Cloud
-* Home_Work_(7.3) - Управляющие конструкции в коде Terraform
+<details><summary>Домашние задания</summary>
+
+* Home_Work_(7.1) - Введение в Terraform  
+* Home_Work_(7.2) - Основы Terraform. Yandex Cloud  
+* Home_Work_(7.3) - Управляющие конструкции в коде Terraform  
+* Home_Work_(7.4) - Продвинутые методы работы с Terraform"
+</details>
+
+## CI, мониторинг и управление конфигурациями
+<details><summary>Домашние задания</summary>
+* Home_Work_(8.1) - Введение в Ansible
+</details>
