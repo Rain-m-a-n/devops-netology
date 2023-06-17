@@ -6,13 +6,13 @@ image=("pycontribs/fedora" "pycontribs/centos:7" "pycontribs/ubuntu:latest" )
 for i in ${image[@]}; do
    case $i in
    pycontribs/fedora)
-     docker run -dit --name ${name[0]} pycontribs/fedora bash
+     docker run -dit --name ${name[0]} $i bash
      ;;
    pycontribs/centos:7)
-     docker run -dit --name ${name[1]} pycontribs/centos:7 bash
+     docker run -dit --name ${name[1]} $i bash
      ;;
    pycontribs/ubuntu:latest)
-     docker run -dit --name ${name[2]} pycontribs/ubuntu:latest bash
+     docker run -dit --name ${name[2]} $i bash
      ;;
    esac
 done
