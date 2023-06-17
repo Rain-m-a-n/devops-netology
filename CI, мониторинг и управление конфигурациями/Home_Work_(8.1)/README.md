@@ -106,7 +106,7 @@
 4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
 ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.1)/pics/12.png) 
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
-[скрипт](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.1)/playbook/inventory/auto.sh)
+[скрипт](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI%2C%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.1)/playbook/auto.sh)
 6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
 
 ---
