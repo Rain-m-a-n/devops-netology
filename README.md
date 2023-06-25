@@ -53,4 +53,5 @@
 ## CI, мониторинг и управление конфигурациями
 <details><summary>Домашние задания</summary>
 * Home_Work_(8.1) - Введение в Ansible
+* Home_work_(8.2) - Работа с Playbook
 </details>
