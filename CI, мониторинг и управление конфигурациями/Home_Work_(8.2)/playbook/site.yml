@@ -46,7 +46,7 @@
     - name: Get distrib Vector
       become: true
       ansible.builtin.yum:
-        name: "https://packages.timber.io/vector/0.30.0/vector-1.x86_64.rpm"
+        name: "https://packages.timber.io/vector/{{vector_ver}}/vector-1.x86_64.rpm"
         state: present
       notify: Start Vector service
     

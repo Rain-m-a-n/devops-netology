@@ -11,7 +11,15 @@
 
 2. ### **Play Clickhouse**
 2. Скачиваются пакеты для установки выбранной версии
-    * версия ПО задается в переменной `./playbook/group_vars/clickhouse/vars.yml`
+    * версия ПО задается в переменной `{{clickhouse_version}}` в файле `./playbook/group_vars/clickhouse/vars.yml`
+    * состав пакетов указан в значении `with_items: "{{ clickhouse_packages }}"` и подставляется зачение через `{{item}}` в цикле
+      ```bash
+      ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+      with_items: "{{ clickhouse_packages }}"
+      ```
+      
 3. Пакеты сохраняются для последующей установки в домашней папке пользователя. 
 4. Производится установка пакетов
 5. По завершении установки пакетов происходит перезапуск службы `clickhouse-server`
@@ -20,7 +28,7 @@
 8. Скачивается установочный пакет необходимой версии Vector
     * версия ПО задается в переменной `./playbook/group_vars/vector/vars.yml`
 9. Проверяется его наличие в системе, если отсутствует, то пакет устанавливается
-9. Перезапускается служба `Vector`
+10. Перезапускается служба `Vector`
 
 
    
