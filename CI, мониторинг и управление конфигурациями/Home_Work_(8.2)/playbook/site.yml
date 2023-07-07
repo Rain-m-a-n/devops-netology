@@ -50,16 +50,3 @@
         state: present
       notify: Start Vector service
     
-    ############# Оставил второй вариант для примера
-    # tasks:
-    # - name: download packages
-    #   ansible.builtin.get_url:
-    #     url: "https://packages.timber.io/vector/{{vector_ver}}/vector-{{vector_ver}}-1.x86_64.rpm"
-    #     dest: "./vector-{{vector_ver}}-1.x86_64.rpm"
-    # - name: Install vector packages
-    #   become: true
-    #   ansible.builtin.yum:
-    #     name:
-    #       - vector-{{vector_ver}}-1.x86_64.rpm
-    #   notify: Start Vector service
-    #############
