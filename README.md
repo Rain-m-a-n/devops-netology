@@ -55,5 +55,6 @@
 
 * Home_Work_(8.1) - Введение в Ansible  
 * Home_work_(8.2) - Работа с Playbook
+* Home_Work_(8.3) - Использование Ansible
 </details> 
 
