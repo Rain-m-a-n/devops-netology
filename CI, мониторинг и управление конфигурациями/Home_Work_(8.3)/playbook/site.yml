@@ -53,7 +53,7 @@
       become: true
       template:
         src: vector.conf.j2
-        dest: /etc/vector/vector.yml
+        dest: "{{ cfg_path }}"
         mode: "0644"
       notify: Start Vector service
 - name: Install Lighthouse

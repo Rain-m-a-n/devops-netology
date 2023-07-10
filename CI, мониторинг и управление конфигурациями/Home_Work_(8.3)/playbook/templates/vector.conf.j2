@@ -1,17 +1,17 @@
-[sources.from_file]
+[sources.{{ src }}]
 type = "file"
-include = [ "/home/centos/log/*.log" ]
+include = [ "{{ log_path }}" ]
 read_from = "beginning"
 ignore_older_secs = 600
 
-[sinks.to_clickhouse]
+[sinks.{{ dest }}]
 type = "clickhouse"
-inputs = [ "from_file" ]
-endpoint = "http://192.168.1.81:8123"
+inputs = [ "{{ src }}" ]
+endpoint = "{{ click_point }}"
 table = "some_log"
 compression= "gzip"
 database = "sample"
 auth.strategy = "basic"
-auth.user = "loger"
-auth.password = "loger"
+auth.user = "{{ user }}"
+auth.password = "{{ user }}"
 healthcheck = false
