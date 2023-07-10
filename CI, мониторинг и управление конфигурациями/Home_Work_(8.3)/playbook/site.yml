@@ -20,14 +20,21 @@
           - clickhouse-common-static-{{ clickhouse_version }}.rpm
           - clickhouse-client-{{ clickhouse_version }}.rpm
           - clickhouse-server-{{ clickhouse_version }}.rpm
-      notify: Start clickhouse service
-    - name: Flush handlers
-      meta: flush_handlers
     - name: Create database
       ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc !=82
       changed_when: create_db.rc == 0
+    - name: CLICKHOUSE | Copy config
+      become: true
+      template:
+        src: ./templates/click.conf.j2
+        dest: /etc/clickhouse-server/config.xml
+        mode: "0644"
+      notify: Start clickhouse service
+    - name: Flush handlers
+      meta: flush_handlers
+
 - name: Install Vector
   hosts: vector
   handlers:
@@ -42,6 +49,12 @@
       ansible.builtin.yum:
         name: "https://packages.timber.io/vector/{{ vector_ver }}/vector-1.x86_64.rpm"
         state: present
+    - name: VECTOR | Create vector config
+      become: true
+      template:
+        src: vector.conf.j2
+        dest: /etc/vector/vector.yml
+        mode: "0644"
       notify: Start Vector service
 - name: Install Lighthouse
   hosts: lighthouse
