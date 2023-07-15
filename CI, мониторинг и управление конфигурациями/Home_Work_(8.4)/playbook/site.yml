@@ -1,0 +1,37 @@
+---
+- name: UPDATE | ALL HOSTS
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: UPDATE | Cache
+      ansible.builtin.yum:
+        update_cache: true
+
+- name: Install Clickhouse
+  hosts: clickhouse
+  roles:
+    - role: clickhouse
+      clickhouse_version: "*"
+      clickhouse_dbs_custom:
+        - {name: sample, state: present, }
+      clickhouse_users_custom:
+        - { name: "loger",
+            password: "loger",
+            networks: { 192.168.1.81, 192.168.1.79 },
+            profile: "default",
+            quota: "default",
+            dbs: "sample"}
+      # clickhouse_listen_host: 
+      #   - "192.168.1.70"
+
+
+- name: Install Vector
+  hosts: vector
+  roles:
+    - role: vector-role
+      vector_ver: "0.30.0"
+
+- name: Install Lighthouse
+  hosts: lighthouse
+  roles:
+    - lighthouse-role
