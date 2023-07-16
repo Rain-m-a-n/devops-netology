@@ -19,20 +19,20 @@
 3. Done develop -> On test.
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.  
-![result](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/all.jpg)
+![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/all.jpg)
 
 **Что нужно сделать**
 
 1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done. 
 1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done. 
 1. При проведении обеих задач по статусам используйте kanban. 
-![result](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/kanban.jpg)
+![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/kanban.jpg)
 2. Верните задачи в статус Open.
 3. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
-![result](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/sprint_end.jpg)
+![result](https://github.com/Rain-m-a-n/devops-netology/bloob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/sprint_end.jpg)
 1. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.  
-[Workflow_BUG.xml](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/files/netology.xml)    
-[Workflow_All_other.xml](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/files/another.xml)    
+[Workflow_BUG.xml](https://github.com/Rain-m-a-n/devops-netology/blob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/files/netology.xml)    
+[Workflow_All_other.xml](https://github.com/Rain-m-a-n/devops-netology/blob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/files/another.xml)    
 
 
 ---
