@@ -11,7 +11,7 @@
 5. Done fix -> On test.
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.  
-![result](https://github.com/Rain-m-a-n/devops-netology/tree/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/bug.jpg)
+![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/Непрерывная%20разработка%20и%20интеграция/Home_Work_(9.1)/pics/bug.jpg)  
 Остальные задачи должны проходить по упрощённому workflow:
 
 1. Open -> On develop.
