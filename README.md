@@ -59,3 +59,9 @@
 * Home_Work_(8.4) - Работа с roles
 </details> 
 
+## Непрерывная разработка и интеграция
+
+<details><summary>Домашние задания</summary>  
+
+* Home_Work_(9.1) - Жизненный цикл ПО
+</details>
