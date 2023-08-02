@@ -57,6 +57,7 @@
 * Home_work_(8.2) - Работа с Playbook
 * Home_Work_(8.3) - Использование Ansible
 * Home_Work_(8.4) - Работа с roles
+* Home_Work_(8.5) - Тестирование roles 
 </details> 
 
 ## Непрерывная разработка и интеграция
@@ -64,4 +65,8 @@
 <details><summary>Домашние задания</summary>  
 
 * Home_Work_(9.1) - Жизненный цикл ПО
+* Home_Work_(9.2) - DevOps и SRE
+* Home_Work_(9.3) - Процессы CI/CD
+* Home_Work_(9.4) - Jenkins
+* Home_Work_(9.5) - Teamcity
 </details>
