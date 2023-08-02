@@ -24,8 +24,8 @@
         ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/ubuntu.png)
     * Centos:8  
         ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/centos8.png)
-5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
-    [Vector-role tag.v1.0.2](https://github.com/Rain-m-a-n/vector-role/tree/v1.0.2)
+5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
+    #### [Vector-role tag.v1.0.2](https://github.com/Rain-m-a-n/vector-role/tree/v1.0.2)
 
 ### Tox
 
@@ -42,5 +42,5 @@
     ``` 
 8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.  
     ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/tox_final.png)
-9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
-    [Vector-role tag.v1.0.3](https://github.com/Rain-m-a-n/vector-role/tree/v1.0.3)
+9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
+   #### [Vector-role tag.v1.0.3](https://github.com/Rain-m-a-n/vector-role/tree/v1.0.3)
