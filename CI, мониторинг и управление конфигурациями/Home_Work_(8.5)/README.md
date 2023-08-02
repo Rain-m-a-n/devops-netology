@@ -20,9 +20,9 @@
 3. Добавьте несколько разных дистрибутивов (centos:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
-    * Ubuntu:latest
-        ![result]((https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/ubuntu.png))
-    * Centos:8
+    * Ubuntu:latest  
+        ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/ubuntu.png)
+    * Centos:8  
         ![result](https://github.com/Rain-m-a-n/devops-netology/blob/master/CI,%20мониторинг%20и%20управление%20конфигурациями/Home_Work_(8.5)/pics/centos8.png)
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
     [Vector-role tag.v1.0.2](https://github.com/Rain-m-a-n/vector-role/tree/v1.0.2)
