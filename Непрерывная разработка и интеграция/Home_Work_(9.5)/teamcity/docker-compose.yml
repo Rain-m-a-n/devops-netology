@@ -2,20 +2,39 @@ version: "3"
 services:
   teamcity:
     image: jetbrains/teamcity-server
+    networks:
+      appnet:
+        ipv4_address: 172.16.0.3
     volumes:
       - ~/teamcity/data/:/data/teamcity_server/datadir
       - ~/teamcity/logs/:/opt/teamcity/logs
     ports:
       - 8111:8111
   teamcity-agent:
-    image: jetbrains/teamcity-agent 
+    image: jetbrains/teamcity-agent
+    networks:
+      appnet:
+        ipv4_address: 172.16.0.2
     depends_on:
       - teamcity
     volumes:
-      - ~/teamcity/agent/:/data/teamcity_agent/conf 
+      - ~/teamcity/agent/:/data/teamcity_agent/conf
+    extra_hosts:
+      - "teamcity:172.16.0.3"
+      - "nexus:172.16.0.4"
     environment:
-      SERVER_URL: "http://teamcity:8111"
+      SERVER_URL: "http://172.16.0.3:8111"
   nexus:
-    image: sonatype/nexus3:3.17.0 
-   
-    
+    image: sonatype/nexus3:3.58.1
+    ports:
+      - 8081:8081
+    networks:
+      appnet:
+        ipv4_address: 172.16.0.4
+networks:
+  appnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.0.0/24"
