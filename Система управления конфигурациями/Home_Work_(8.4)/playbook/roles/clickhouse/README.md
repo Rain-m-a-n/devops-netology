@@ -376,13 +376,13 @@ which enables
 
 F: You can call separately stages(from playbook, external role etc.):
 
-Tag | Action
------------- | -------------
-install | Only installation of packages
-config_sys | Only configuration system configs(users.xml and config.xml)
-config_db | Only add&remove databases
-config_sys / Only regenerate dicts
-config | config_sys+config_db
+| Tag                                | Action |
+|------------------------------------| -------------|
+| install                            | Only installation of packages |
+| config_sys                         | Only configuration system configs(users.xml and config.xml)|
+| config_db                          | Only add&remove databases |
+| config_sys / Only regenerate dicts |
+| config                             | config_sys+config_db|
 
 License
 -------
