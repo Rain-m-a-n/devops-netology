@@ -75,9 +75,9 @@
 
 <details><summary>Домашние задания</summary>  
 
-* Home_Work_(9.1) - Системы мониторинга
-* Home_Work_(9.2) - Средство визуализации Grafana
-* Home_Work_(9.3) - Система сбора логов Elastic Stack
-* Home_Work_(9.4) - Платформа мониторинга Sentry
-* Home_Work_(9.5) - Инцидент-менеджмент
+* Home_Work_(10.1) - Системы мониторинга
+* Home_Work_(10.2) - Средство визуализации Grafana
+* Home_Work_(10.3) - Система сбора логов Elastic Stack
+* Home_Work_(10.4) - Платформа мониторинга Sentry
+* Home_Work_(10.5) - Инцидент-менеджмент
 </details>
