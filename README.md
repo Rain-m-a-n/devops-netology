@@ -53,11 +53,11 @@
 ## Система управления конфигурациями
 <details><summary>Домашние задания</summary>
 
-* Home_Work_(8.1) - Введение в Ansible  
-* Home_work_(8.2) - Работа с Playbook
-* Home_Work_(8.3) - Использование Ansible
-* Home_Work_(8.4) - Работа с roles
-* Home_Work_(8.5) - Тестирование roles 
+* [Home_Work_(8.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Система%20управления%20конфигурациями/Home_Work_(8.1)) - Введение в Ansible  
+* [Home_Work_(8.2)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Система%20управления%20конфигурациями/Home_Work_(8.2)) - Работа с Playbook
+* [Home_Work_(8.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Система%20управления%20конфигурациями/Home_Work_(8.3)) - Использование Ansible
+* [Home_Work_(8.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Система%20управления%20конфигурациями/Home_Work_(8.4)) - Работа с roles
+* [Home_Work_(8.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Система%20управления%20конфигурациями/Home_Work_(8.5)) - Тестирование roles 
 </details> 
 
 ## Непрерывная разработка и интеграция
@@ -75,9 +75,9 @@
 
 <details><summary>Домашние задания</summary>  
 
-* Home_Work_(10.1) - Системы мониторинга
-* Home_Work_(10.2) - Средство визуализации Grafana
-* Home_Work_(10.3) - Система сбора логов Elastic Stack
-* Home_Work_(10.4) - Платформа мониторинга Sentry
-* Home_Work_(10.5) - Инцидент-менеджмент
+* [Home_Work_(10.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.1)) - Системы мониторинга
+* [Home_Work_(10.2)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.2)) - Средство визуализации Grafana
+* [Home_Work_(10.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.3)) - Система сбора логов Elastic Stack
+* [Home_Work_(10.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.4)) - Платформа мониторинга Sentry
+* [Home_Work_(10.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.5)) - Инцидент-менеджмент
 </details>
