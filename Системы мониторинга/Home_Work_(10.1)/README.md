@@ -92,7 +92,7 @@
        - "8094:8094"
        - "8125:8125/udp"
    ```
-
+ 
 После настройке перезапустите telegraf, обновите веб интерфейс и приведите скриншотом список `measurments` в
 веб-интерфейсе базы telegraf.autogen . Там должны появиться метрики, связанные с docker.  
 ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0/Home_Work_(10.1)/pics/docker.png)
