@@ -39,26 +39,19 @@ Filebeat следует сконфигурировать для отправки
 
 Результатом выполнения задания должны быть:
 
-- скриншот `docker ps` через 5 минут после старта всех контейнеров (их должно быть 5);
-- скриншот интерфейса kibana;
+- скриншот `docker ps` через 5 минут после старта всех контейнеров (их должно быть 5);  
+  ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0/Home_Work_(10.4)/pics/docker.png)
+- скриншот интерфейса kibana;  
+  ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0/Home_Work_(10.4)/pics/kibana.png)
 - docker-compose манифест (если вы не использовали директорию help);
 - ваши yml-конфигурации для стека (если вы не использовали директорию help).
 
 ## Задание 2
 
-Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
-
-Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
-
+Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.  
+![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0/Home_Work_(10.4)/pics/patern.png)
+Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.  
+![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0/Home_Work_(10.4)/pics/filter.jpg)
 В манифесте директории help также приведенно dummy-приложение, которое генерирует рандомные события в stdout-контейнера.
 Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.
- 
----
-
-### Как оформить решение задания
-
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
-
----
-
  
