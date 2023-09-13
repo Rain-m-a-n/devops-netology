@@ -81,3 +81,8 @@
 * [Home_Work_(10.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.4)) - Платформа мониторинга Sentry
 * [Home_Work_(10.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Системы%20мониторинга/Home_Work_(10.5)) - Инцидент-менеджмент
 </details>
+
+<details><summary>Домашние задания</summary> 
+
+* [Home_Work_(11.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.1))) - Введение в микросервисы 
+</details>
