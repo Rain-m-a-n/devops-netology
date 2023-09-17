@@ -87,5 +87,8 @@
 
 <details><summary>Домашние задания</summary> 
 
-* [Home_Work_(11.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.1))) - Введение в микросервисы 
+* [Home_Work_(11.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.1)) - Введение в микросервисы
+* [Home_Work_(11.2)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.2)) - Микросервисы: принципы
+* [Home_Work_(11.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.3)) - Микросервисы: подходы
+* [Home_Work_(11.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.4)) - Микросервисы: масштабирование
 </details>
