@@ -49,20 +49,20 @@
 ### Задание 1. Установка MicroK8S
 
 1. Установить MicroK8S на локальную машину или на удалённую виртуальную машину.  
-   ![res](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/install.jpg)
+   ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/install.jpg)
 2. Установить dashboard.  
-   ![res](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/dashboard.jpg)
+   ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/dashboard.jpg)
 3. Сгенерировать сертификат для подключения к внешнему ip-адресу.  
-   ![res](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/token.jpg)
+   ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/token.jpg)
 ------
 
 ### Задание 2. Установка и настройка локального kubectl
 1. Установить на локальную машину kubectl.  
-   ![res](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/kube.jpg)
+   ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/kube.jpg)
 2. Настроить локально подключение к кластеру. 
    ```bash
       microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
    ```
 3. Подключиться к дашборду с помощью port-forward.  
-   ![res](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/dashboard01.jpg)
+   ![res](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)/pics/dashboard01.jpg)
 ------
