@@ -92,3 +92,14 @@
 * [Home_Work_(11.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.3)) - Микросервисы: подходы
 * [Home_Work_(11.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Микросервисная%20архитектура/Home_Work_(11.4)) - Микросервисы: масштабирование
 </details>
+
+## Администрирование кластера Kubernetes
+
+<details><summary>Домашние задания</summary> 
+
+* [Kuber_(1.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.1)) - Kubernetes. Причины появления. Команда kubectl
+* [Kuber_(1.2)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.2)) - Kubernetes. Базовые объекты K8S
+* [Kuber_(1.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.3)) - Kubernetes. Запуск приложений в K8S
+* [Kuber_(1.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.4)) - Kubernetes. Сетевое взаимодействие в K8S. Часть 1
+* [Kuber_(1.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.5)) - Kubernetes. Сетевое взаимодействие в K8S. Часть 2
+</details>
