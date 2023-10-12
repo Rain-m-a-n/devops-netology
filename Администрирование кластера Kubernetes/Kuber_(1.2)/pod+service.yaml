@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: hello-world
-      image: nginx:1.20
+      image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
 
 ---
 apiVersion: v1
