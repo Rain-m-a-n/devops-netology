@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-4-2
+  namespace: kuber-1-4
+  labels:
+    app: kuber-4-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kuber-4-2
+  template:
+    metadata:
+      labels:
+        app: kuber-4-2
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25.2
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task2-svc
+  namespace: kuber-1-4
+spec:
+  selector:
+    app: kuber-4-2
+  ports:
+    - name: nginx
+      protocol: TCP
+      port: 80
+      nodePort: 30100
+  type: NodePort
