@@ -6,20 +6,14 @@
 
 ------
 
-### Чеклист готовности к домашнему заданию
-
-1. Установленное k8s-решение (например, MicroK8S).
-2. Установленный локальный kubectl.
-3. Редактор YAML-файлов с подключённым Git-репозиторием.
-
-------
-
-### Инструменты и дополнительные материалы, которые пригодятся для выполнения задания
+<details><summary>Инструменты и дополнительные материалы</summary>
 
 1. [Инструкция](https://microk8s.io/docs/getting-started) по установке MicroK8S.
 2. [Описание](https://kubernetes.io/docs/concepts/services-networking/service/) Service.
 3. [Описание](https://kubernetes.io/docs/concepts/services-networking/ingress/) Ingress.
 4. [Описание](https://github.com/wbitt/Network-MultiTool) Multitool.
+
+</details>
 
 ------
 
@@ -27,9 +21,60 @@
 
 1. Создать Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт.
 2. Создать Deployment приложения _backend_ из образа multitool. 
+    ```bash
+    > $ kubectl get pods -n kuber-1-5                                                                                                   [±master ●●●]
+    NAME                       READY   STATUS    RESTARTS   AGE
+    backend-85c557f85b-xs8d7   1/1     Running   0          7m3s
+    frontend-77d6cf446-gvmj7   1/1     Running   0          7m3s
+    frontend-77d6cf446-hh47q   1/1     Running   0          7m3s
+    frontend-77d6cf446-x6kn6   1/1     Running   0          7m3s
+    ```
 3. Добавить Service, которые обеспечат доступ к обоим приложениям внутри кластера. 
+    ```bash
+    > $ kubectl get svc -n kuber-1-5                                                                                                    [±master ●●●]
+    NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+    backend-svc    ClusterIP   10.96.159.134   <none>        8080/TCP   8m58s
+    frontend-svc   ClusterIP   10.96.105.67    <none>        80/TCP     8m58s
+    ```
 4. Продемонстрировать, что приложения видят друг друга с помощью Service.
-5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
+    ```bash
+    > $ kubectl exec -n kuber-1-5 frontend-77d6cf446-hh47q -- curl backend-svc:8080                                                     [±master ●●●]
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    Dload  Upload   Total   Spent    Left  Speed
+    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0WBITT Network MultiTool (with NGINX) - backend-85c557f85b-xs8d7 - 10.244.0.8 - HTTP: 8080 , HTTPS: 443 . (Formerly praqma/network-multitool)
+    100   141  100   141    0     0  93750      0 --:--:-- --:--:-- --:--:--  137k
+    ```
+   ```bash
+    > $ kubectl exec -n kuber-1-5 backend-85c557f85b-xs8d7 -- curl frontend-svc                                                         [±master ●●●]
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    Dload  Upload   Total   Spent    Left  Speed
+    100   615  100   615    0     0   232k      0 --:--:-- --:--:-- --:--:--  300k
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+    html { color-scheme: light dark; }
+    body { width: 35em; margin: 0 auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif; }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+    ```
+5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.  
+    [Deploy](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.5)/task1.yml)
 
 ------
 
@@ -39,13 +84,5 @@
 2. Создать Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
 3. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
 4. Предоставить манифесты и скриншоты или вывод команды п.2.
-
-------
-
-### Правила приема работы
-
-1. Домашняя работа оформляется в своем Git-репозитории в файле README.md. Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-2. Файл README.md должен содержать скриншоты вывода необходимых команд `kubectl` и скриншоты результатов.
-3. Репозиторий должен содержать тексты манифестов или ссылки на них в файле README.md.
-
+   [Ingress](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.5)/task2.yml)
 ------
