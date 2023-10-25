@@ -81,8 +81,56 @@
 ### Задание 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
 
 1. Включить Ingress-controller в MicroK8S.
+   ```bash
+   > $ sudo microk8s enable ingress                                                                                                     [±master ●●]
+   Infer repository core for addon ingress
+   Enabling Ingress
+   ingressclass.networking.k8s.io/public created
+   ingressclass.networking.k8s.io/nginx created
+   namespace/ingress created
+   serviceaccount/nginx-ingress-microk8s-serviceaccount created
+   clusterrole.rbac.authorization.k8s.io/nginx-ingress-microk8s-clusterrole created
+   role.rbac.authorization.k8s.io/nginx-ingress-microk8s-role created
+   clusterrolebinding.rbac.authorization.k8s.io/nginx-ingress-microk8s created
+   rolebinding.rbac.authorization.k8s.io/nginx-ingress-microk8s created
+   configmap/nginx-load-balancer-microk8s-conf created
+   configmap/nginx-ingress-tcp-microk8s-conf created
+   configmap/nginx-ingress-udp-microk8s-conf created
+   daemonset.apps/nginx-ingress-microk8s-controller created
+   Ingress is enabled
+   ```
 2. Создать Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
 3. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
-4. Предоставить манифесты и скриншоты или вывод команды п.2.
+   ```bash
+   > $ curl net-logy.web                                                                                                                                                                                                                                                                                            [±master ●●]
+   <!DOCTYPE html>
+   <html>
+   <head>
+   <title>Welcome to nginx!</title>
+   <style>
+   html { color-scheme: light dark; }
+   body { width: 35em; margin: 0 auto;
+   font-family: Tahoma, Verdana, Arial, sans-serif; }
+   </style>
+   </head>
+   <body>
+   <h1>Welcome to nginx!</h1>
+   <p>If you see this page, the nginx web server is successfully installed and
+   working. Further configuration is required.</p>
+   
+   <p>For online documentation and support please refer to
+   <a href="http://nginx.org/">nginx.org</a>.<br/>
+   Commercial support is available at
+   <a href="http://nginx.com/">nginx.com</a>.</p>
+   
+   <p><em>Thank you for using nginx.</em></p>
+   </body>
+   </html>
+   ```
+   ```bash
+   > $ curl net-logy.web/api                                                                                                                                                                                                                                                                                        [±master ●●]
+   WBITT Network MultiTool (with NGINX) - backend-85c557f85b-xs8d7 - 10.244.0.8 - HTTP: 8080 , HTTPS: 443 . (Formerly praqma/network-multitool)
+    ```
+4. Предоставить манифесты и скриншоты или вывод команды п.2.  
    [Ingress](https://github.com/Rain-m-a-n/devops-netology/blob/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.5)/task2.yml)
 ------

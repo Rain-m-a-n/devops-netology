@@ -3,9 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress
+  namespace: kuber-1-5
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: homelab.com
+    - host: net-logy.web
       http:
         paths:
           - path: /
