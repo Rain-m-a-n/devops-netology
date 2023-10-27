@@ -1,0 +1,61 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kuber-2-1
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-work
+  namespace: kuber-2-1
+  labels:
+    app: homework
+spec:
+  selector:
+    matchLabels:
+      app: homework
+  template:
+    metadata:
+      labels:
+        app: homework
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command: ['sh', '-c', 'while true; do echo hello >> /output/welcome.txt; sleep 5; done']
+          volumeMounts:
+            - name: shara
+              mountPath: /output
+
+        - name: multitool
+          image: wbitt/network-multitool:latest
+          env:
+            - name: HTTP_PORT
+              value: "8080"
+          volumeMounts:
+          - name: shara
+            mountPath: /input
+      volumes:
+        - name: shara
+          hostPath:
+            path: /tmp/shara
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-svc
+  namespace: kuber-2-1
+spec:
+  selector:
+    app: homework
+  ports:
+    - name: multitool
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+
+

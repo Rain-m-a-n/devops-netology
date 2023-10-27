@@ -103,3 +103,14 @@
 * [Kuber_(1.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.4)) - Kubernetes. Сетевое взаимодействие в K8S. Часть 1
 * [Kuber_(1.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Администрирование%20кластера%20Kubernetes/Kuber_(1.5)) - Kubernetes. Сетевое взаимодействие в K8S. Часть 2
 </details>
+
+## Конфигурация Kubernetes
+
+<details><summary>Домашние задания</summary>
+
+* [Kuber_(2.1)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Конфигурация%20Kubernetes/Kuber_(2.1)) - Kubernetes. Хранение в K8s. Часть 1
+* [Kuber_(2.2)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Конфигурация%20Kubernetes/Kuber_(2.2)) - Kubernetes. Хранение в K8s. Часть 2
+* [Kuber_(2.3)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Конфигурация%20Kubernetes/Kuber_(2.3)) - Kubernetes. Конфигурация приложений
+* [Kuber_(2.4)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Конфигурация%20Kubernetes/Kuber_(2.4)) - Kubernetes. Управление доступом
+* [Kuber_(2.5)](https://github.com/Rain-m-a-n/devops-netology/tree/master/Конфигурация%20Kubernetes/Kuber_(2.5)) - Kubernetes. Helm
+</details>
