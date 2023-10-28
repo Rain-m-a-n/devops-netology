@@ -29,13 +29,13 @@
 2. Сделать так, чтобы busybox писал каждые пять секунд в некий файл в общей директории.
 3. Обеспечить возможность чтения файла контейнером multitool.
     ```bash
-    > $ kubectl get pods -n kuber-2-1                                                                                           [±feature/kuber-2-1 ●●●]
+    > $ kubectl get pods -n kuber-2-1                                                                        [±feature/kuber-2-1 ●●●]
     NAME                        READY   STATUS    RESTARTS   AGE
     home-work-bf6598d54-8bxg6   2/2     Running   0          5m53s
     ```
 4. Продемонстрировать, что multitool может читать файл, который периодоически обновляется.
     ```bash
-    > $ kubectl exec -n kuber-2-1 home-work-bf6598d54-8bxg6 -c multitool -- tail -5 /input/welcome.txt                         [±feature/kuber-2-1 ●●●]
+    > $ kubectl exec -n kuber-2-1 home-work-bf6598d54-8bxg6 -c multitool -- tail -5 /input/welcome.txt       [±feature/kuber-2-1 ●●●]
     hello
     hello
     hello
@@ -55,7 +55,7 @@
 
 1. Создать DaemonSet приложения, состоящего из multitool.
     ```bash
-    > $ kubectl get pods -n kuber-2-1                                                                                           [±feature/kuber-2-1 ●●●]
+    > $ kubectl get pods -n kuber-2-1                                                                        [±feature/kuber-2-1 ●●●]
     NAME                        READY   STATUS    RESTARTS   AGE
     home-work-bf6598d54-8bxg6   2/2     Running   0          35m
     multi-tool-hwk92            1/1     Running   0          97s
@@ -63,7 +63,7 @@
 2. Обеспечить возможность чтения файла `/var/log/syslog` кластера MicroK8S.
     * т.к. в этой папке на Ноде пусто, смонтировал на папку выше `/var/log`
     ```bash
-    > $ kubectl exec -n kuber-2-1 multi-tool-hwk92  -- ls -l /node/logs                                                         [±feature/kuber-2-1 ●●●]
+    > $ kubectl exec -n kuber-2-1 multi-tool-hwk92  -- ls -l /node/logs                                      [±feature/kuber-2-1 ●●●]
     total 32
     -rw-r--r--    1 root     root          2955 Oct 27 16:15 alternatives.log
     drwxr-xr-x    2 root     root          4096 Oct 10 20:49 apt
@@ -74,7 +74,7 @@
     ```    
 3. Продемонстрировать возможность чтения файла изнутри пода.
     ```bash
-    > $ kubectl exec -n kuber-2-1 multi-tool-hwk92  -- cat /node/logs/dpkg.log                                                  [±feature/kuber-2-1 ●●●]
+    > $ kubectl exec -n kuber-2-1 multi-tool-hwk92  -- cat /node/logs/dpkg.log                               [±feature/kuber-2-1 ●●●]
     2023-10-10 20:49:36 startup archives unpack
     2023-10-10 20:49:36 install nano:arm64 <none> 5.4-2+deb11u2
     2023-10-10 20:49:36 status half-installed nano:arm64 5.4-2+deb11u2
