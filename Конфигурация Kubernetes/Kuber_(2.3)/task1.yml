@@ -1,0 +1,75 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kuber-2-3
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: multitool-config
+  namespace: kuber-2-3
+data:
+  http_port: '8080'
+  index: |
+    Netology 
+    Home work 
+    Kubernetes "Configure applications"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-multitool
+  namespace: kuber-2-3
+  labels:
+    app: homework
+spec:
+  selector:
+    matchLabels:
+      app: homework
+  template:
+    metadata:
+      labels:
+        app: homework
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command: ['sh', '-c', 'sleep 50000']
+
+        - name: multitool
+          image: wbitt/network-multitool:latest
+          volumeMounts:
+          - name: configmap-nginx
+            mountPath: /usr/share/nginx/html/
+          env:
+            - name: HTTP_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: multitool-config
+                  key: http_port
+      volumes:
+        - name: configmap-nginx
+          configMap:
+            name: multitool-config
+            items:
+              - key: "index"
+                path: "index.html"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  namespace: kuber-2-3
+spec:
+  selector:
+    app: homework
+  ports:
+    - name: multitool
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
