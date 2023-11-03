@@ -96,6 +96,32 @@
 1. Включить и настроить NFS-сервер на MicroK8S.
 2. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
 3. Продемонстрировать возможность чтения и записи файла изнутри пода. 
-4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
-
+   ```bash
+   > $ kube get pvc -n kuber-2-2 -o wide                                                                                       
+   NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE     VOLUMEMODE
+   task1     Bound    local                                      1Gi        RWX                           26m     Filesystem
+   nfs-pvc   Bound    pvc-6882bca6-b1b1-456e-9252-e67b556ec50b   1Gi        RWX            nfs            9m56s   Filesystem
+   ```
+   ```bash
+   > $ kube get pv                                                                                                             
+   NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                  STORAGECLASS   REASON   AGE
+   data-nfs-server-provisioner-0              1Gi        RWO            Retain           Bound    nfs-server-provisioner/data-nfs-server-provisioner-0                           33m
+   local                                      1Gi        RWX            Retain           Bound    kuber-2-2/task1                                                                29m
+   pvc-6882bca6-b1b1-456e-9252-e67b556ec50b   1Gi        RWX            Delete           Bound    kuber-2-2/nfs-pvc                                      nfs                     13m
+   ```
+   ```bash
+   > $ kube get pods -n kuber-2-2                                                                                                                                                              
+   NAME                       READY   STATUS    RESTARTS      AGE
+   home-work-8d5f89d4-vhbgj   1/1     Running   1 (13m ago)   32m
+   pod-with-pvc               1/1     Running   1 (13m ago)   16m
+   ```
+   ```bash
+   > $ kube exec -n kuber-2-2 pod-with-pvc -- sh -c 'echo "testing PVC" > /tmp/nfs/test.txt'                                                                                                   
+                                                                                                                                                                                             
+   ubuntu@ubuntu ~                                                                                                                                                                   [16:51:25]
+   > $ kube exec -n kuber-2-2 pod-with-pvc -- cat /tmp/nfs/test.txt                                                                                                                            
+   testing PVC
+   ```
+6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
+   [deployment](https://github.com/Rain-m-a-n/devops-netology/blob/master/Конфигурация%20Kubernetes/Kuber_(2.2)/task2.yml)
 
