@@ -74,6 +74,6 @@
    nginx-1-svc   ClusterIP   10.152.183.153   <none>        80/TCP     50m
    ```
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
-   [deployment](https://github.com/Rain-m-a-n/devops-netology/blob/master/Конфигурация%20Kubernetes/Kuber_(2.2)/task2.yml)  
+   [deployment](https://github.com/Rain-m-a-n/devops-netology/blob/master/Конфигурация%20Kubernetes/Kuber_(2.3)/task2.yml)  
    ![pics](https://github.com/Rain-m-a-n/devops-netology/blob/master/Конфигурация%20Kubernetes/Kuber_(2.3)/pics/2.jpg)
 ------
