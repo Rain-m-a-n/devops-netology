@@ -1,0 +1,54 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kuber-2-4
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-token
+  namespace: kuber-2-4
+  annotations:
+    kubernetes.io/service-account.name: "netology"
+type: kubernetes.io/service-account-token
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool
+  namespace: kuber-2-4
+spec:
+  containers:
+    - name: test-multitool
+      image: wbitt/network-multitool
+  serviceAccountName: netology
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: kuber-2-4
+  name: logs-and-config
+rules:
+  - apiGroups: [ "" ]
+    resources: [ "pods", "pods/log" ]
+    verbs: [ "get", "watch", "list", "describe" ]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rb-logs-and-config
+  namespace: kuber-2-4
+subjects:
+  - kind: User
+    name: user1
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: logs-and-config
+  apiGroup: rbac.authorization.k8s.io
+
