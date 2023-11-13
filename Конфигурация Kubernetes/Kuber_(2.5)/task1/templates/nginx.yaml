@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx02
+  namespace: kuber-2-5
+  labels:
+    app: homework
+spec:
+  selector:
+    matchLabels:
+      app: homework
+  template:
+    metadata:
+      labels:
+        app: homework
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable-bullseye-perl

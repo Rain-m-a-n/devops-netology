@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc-02
+  namespace: kuber-2-5
+spec:
+  selector:
+    app: homework
+  ports:
+    - name: nginx-svc-3
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
