@@ -46,8 +46,8 @@
     ├─18502 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id bd3e263b0c51c252bfa7fed103c105d699905>
     ├─19137 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 1e180a7546c5888b96a48974a853ac1246a9d>
     ├─19869 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id cc607de33f8d69138ea431d4678304595e409>
-    ```
-└─21598 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id cb66743b9b7d6c04f5a5a91eb3
+    └─21598 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id cb66743b9b7d6c04f5a5a91eb3
+   ```  
 3. Запуск etcd производить на мастере.
 4. Способ установки выбрать самостоятельно.
 
