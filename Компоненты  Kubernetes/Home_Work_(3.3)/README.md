@@ -18,7 +18,7 @@
 
 ### Задание 1. Создать сетевую политику или несколько политик для обеспечения доступа
 
-1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.
+1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.  
    [Frontend](https://github.com/Rain-m-a-n/devops-netology/blob/master/Компоненты%20Kubernetes/Home_Work(3.3)/frontend.yaml)  
    [Backend](https://github.com/Rain-m-a-n/devops-netology/blob/master/Компоненты%20Kubernetes/Home_Work(3.3)/backend.yaml)  
    [Cache](https://github.com/Rain-m-a-n/devops-netology/blob/master/Компоненты%20Kubernetes/Home_Work(3.3)/cache.yaml)  
