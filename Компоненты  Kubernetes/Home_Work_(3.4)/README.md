@@ -123,7 +123,7 @@
 ![pics](https://github.com/Rain-m-a-n/devops-netology/blob/master/Компоненты%20%20Kubernetes/Home_Work_(3.4)/pics/nginx.jpg) 
 
 4. Откатиться после неудачного обновления.
-   * Проверим версия деплоймента, чтоб понять на какую последнюю рабочую можно "откатиться"
+   * Проверим версии деплоймента, чтоб понять на какую последнюю рабочую можно "откатиться"
    ```bash
     ubuntu@work-vm:~$ kubectl rollout history deployment frontend -n kuber-3-4
     deployment.apps/frontend
