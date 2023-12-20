@@ -120,8 +120,9 @@
      failed to resolve reference "docker.io/library/nginx:1.28": docker.io/library/nginx:1.28: not found
      ```
   При этом приложение продолжит работать, т.к. поды со старой версией не были уничтожены.  
-    ![pics](https://github.com/Rain-m-a-n/devops-netology/blob/master/Конфигурация20%20Kubernetes/Home_Work_(3.4)/pics/nginx.jpg)
-4. Откатиться после неудачного обновления.
+![pics](https://github.com/Rain-m-a-n/devops-netology/blob/master/Компоненты20%20Kubernetes/Home_Work_(3.4)/pics/nginx.jpg)
+
+5. Откатиться после неудачного обновления.
    * Проверим версия деплоймента, чтоб понять на какую последнюю рабочую можно "откатиться"
    ```bash
     ubuntu@work-vm:~$ kubectl rollout history deployment frontend -n kuber-3-4
