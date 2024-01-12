@@ -1,5 +1,0 @@
-default_zone   = "ru-central1-a"
-token          = "y0_AgAAAAAbewcrAATuwQAAAADfuTT2Kcc0x-E4SqGqDRy6eSF9cJ2QVd4"
-cloud_id       = "b1grgef7o02pmmkgrrvd"
-folder_id      = "b1gmie6p07gs449h84gj"
-ssh_adm_key    = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbD88iq8wabgdWNTAyoWJWvPX14o0uZRpweXxPd/oxCCUYD17QQlq75/Kicmhh/uOzUS2AIFZ+SiwVThJKHAuhjTdqU4Jz/KEAvJDFltCGAMWo9pn+moxQC3iD60EfPaL2903oxa4k/f69ZGZeyK2hpv9qlXdTLSQEEBgLe9h4rIV0yyS+uZQ2nwdF+mBd5+TxQ9A+ZBcGaTfhX3qteNaaqiTs/mLpS1OvrMWLLMsoeOvqLoUiZGKaNa276EEDs/9P1IrBmAvDsfwNIAlcXa7kbcC/NXvuUpG0lnq5eZyyYAW/o3YSreCoc0sZM9qGzW9yIqjoce7KGxyluJ0JqmV3gmsP+a2TVyEW65P3sW3UzfIFRWZYj0x1Li2QJbl1MIsfXfj+/jfl3gP5Q6Y+DT5eKzNe0Lf33m0Kq6fFB2LaWz4GEXjJDNYkme/7EKtRecsVkTkw2efzxxmR9Mf71eCiDwX7EfB0qBDFIxCE+ScPyKG2P6EvCnjwDu4gRdMZWC8= bortnikov@MacBook.local"
