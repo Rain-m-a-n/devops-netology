@@ -16,6 +16,7 @@ resource "yandex_compute_instance" "public-vm" {
   boot_disk {
     initialize_params {
       image_id = yandex_compute_image.ubuntu-2204-lts.id
+      test = var.ssh_key_path
     }
   }
 

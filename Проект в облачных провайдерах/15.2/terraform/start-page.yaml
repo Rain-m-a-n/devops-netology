@@ -1,0 +1,28 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: users, admin, sudo
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbD88iq8wabgdWNTAyoWJWvPX14o0uZRpweXxPd/oxCCUYD17QQlq75/Kicmhh/uOzUS2AIFZ+SiwVThJKHAuhjTdqU4Jz/KEAvJDFltCGAMWo9pn+moxQC3iD60EfPaL2903oxa4k/f69ZGZeyK2hpv9qlXdTLSQEEBgLe9h4rIV0yyS+uZQ2nwdF+mBd5+TxQ9A+ZBcGaTfhX3qteNaaqiTs/mLpS1OvrMWLLMsoeOvqLoUiZGKaNa276EEDs/9P1IrBmAvDsfwNIAlcXa7kbcC/NXvuUpG0lnq5eZyyYAW/o3YSreCoc0sZM9qGzW9yIqjoce7KGxyluJ0JqmV3gmsP+a2TVyEW65P3sW3UzfIFRWZYj0x1Li2QJbl1MIsfXfj+/jfl3gP5Q6Y+DT5eKzNe0Lf33m0Kq6fFB2LaWz4GEXjJDNYkme/7EKtRecsVkTkw2efzxxmR9Mf71eCiDwX7EfB0qBDFIxCE+ScPyKG2P6EvCnjwDu4gRdMZWC8= bortnikov@MacBook.local
+
+write_files:
+  - content: |
+      #/bin/bash
+      cat << EOF | sudo tee /var/www/html/index.html 
+      <html>
+      <body>
+
+        <h1>Hi, this is picture in Object Storage </h1>
+      
+        <img src="https://storage.yandexcloud.net/static-picture/3hero.jpg" /img>
+
+      </body>
+      </html>
+      EOF
+    path: /home/ubuntu/start-page.sh
+    permissions: '0755'
+
+runcmd:
+  - /home/ubuntu/start-page.sh
