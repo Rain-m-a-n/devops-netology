@@ -76,7 +76,7 @@ resource "yandex_compute_image" "nat-instance-ubuntu" {
 
 resource "yandex_compute_instance" "private-vm" {
   name        = local.vm_private_name
-  platform_id = "standard-v3"
+  platform_id = "standard-v1"
   zone        = "ru-central1-a"
   hostname    = local.vm_private_name
 
@@ -109,7 +109,7 @@ resource "yandex_compute_instance" "private-vm" {
 
 resource "yandex_compute_instance" "nat-instance" {
   name        = local.vm_public_name
-  platform_id = "standard-v3"
+  platform_id = "standard-v1"
   zone        = "ru-central1-a"
   hostname    = local.vm_public_name
 

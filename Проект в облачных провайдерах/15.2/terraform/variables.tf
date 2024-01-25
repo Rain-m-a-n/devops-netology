@@ -29,6 +29,10 @@ variable "ssh_adm_key" {
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
+variable "platform" {
+  type = string
+  default = "standard-v1"
+}
 variable "public_cidr" {
   type        = list(string)
   default     = ["192.168.10.0/24"]
@@ -39,6 +43,20 @@ variable "private_cidr" {
   type        = list(string)
   default     = ["192.168.20.0/24"]
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "sa" {
+  type       = string
+}
+
+variable "root_user" {
+  type    = string
+  default = "ubuntu"
+}
+
+variable "ssh_key_path" {
+  type    = string
+  default = "./ssh_key"
 }
 
 variable "ssh_key" {
